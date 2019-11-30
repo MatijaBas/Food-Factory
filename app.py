@@ -1,8 +1,15 @@
 import os
 from flask import Flask
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 
 
 app = Flask(__name__)
+
+app.config["MONGO_DBNAME"] = 'food_factory'
+app.config["MONGO_URI"] = ''
+
+mongo = PyMongo(app)
 
 
 @app.route('/')
