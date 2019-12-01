@@ -1,0 +1,11 @@
+{% extends 'base.html'%} {% block content %}
+
+{% for recipe in recipes %}
+{{recipe.title}}
+<img class="recipe-img" alt="{{ recipe.title }}" src="{{ url_for('static', filename='img/' + recipe.image) }}">
+
+{{recipe.cooking_time}}
+{{recipe.serves}}
+{% endfor %}
+
+{% endblock %}
