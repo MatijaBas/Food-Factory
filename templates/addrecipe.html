@@ -1,0 +1,121 @@
+{% extends 'base.html'%} {% block content %}
+
+<h2 style="
+    margin-top: 60px;
+    margin-left: 30px;
+">Add Recipe</h2>
+<div class="container">
+	<div class="row recipe-card card z-depth-1 center-align">
+		<form method="POST" action="" enctype="multipart/form-data" style="margin: 18px;">
+
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<h4 class="card-title">
+						<label for="inputEmail4">Title</label>
+						<input type="email" class="form-control" id="inputEmail4">
+                </h4>
+				</div>
+				<div class="form-group col-md-6">
+					<h4 class="card-title">
+						<label for="inputState">Category</label>
+
+						<select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>Everyday</option>
+        <option>Christmas</option>
+        <option>Vegeterian</option>
+        <option>Desserts</option>
+      </select>
+					</h4>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<h4 class="card-title">
+						<label for="inputCity">Cooking time</label>
+						<input type="text" class="form-control" id="inputCity" placeholder="minutes">
+                    </h4>
+				</div>
+				<div class="form-group col-md-4">
+					<h4 class="card-title">
+						<label for="inputState">Serves</label>
+						<input type="text" class="form-control" id="inputCity" placeholder="peoples">
+                        </h4>
+				</div>
+				<div class="form-group col-md-4">
+					<h4 class="card-title">
+						<label for="inputZip">Author</label>
+						<input type="text" class="form-control" id="inputZip">
+								</h4>
+				</div>
+			</div>
+			<div class="form-group">
+				<!--Ingredients Card-->
+				<div class="row recipe-card card z-depth-1 center-align">
+					<!--Card Title-->
+					<h4 class="card-title">
+						<i class="fas fa-hamburger" aria-hidden="true"></i>
+						Ingredients
+					</h4>
+					<!--Ingredient Field-->
+					<div class="ingredients input-field col s12">
+						<input id="ingredients" name="ingredients" type="text" placeholder="Ingredient (one per line)" class="form-control validate" required>
+						<label for="ingredients"></label>
+					</div>
+					<div class="col s12 add-remove-btns">
+						<!--Add Ingredient Row Btn-->
+						<button type="button" class="waves-effect waves-light btn add-ing small-btn" aria-label="Add new ingredient row">
+                                    <i class="fas fa-plus material-icons" aria-hidden="true"></i>
+                                    </button>
+						<!--Remove Ingredient Row Btn-->
+						<button type="button" class="waves-effect waves-light btn remove-ing small-btn alt" aria-label="Remove last ingredient row">
+                                      <i class="fas fa-minus material-icons" aria-hidden="true"></i>
+                                    </button>
+					</div>
+				</div>
+
+				<!--Cooking Instructions Card-->
+				<div class="row recipe-card card z-depth-1 center-align">
+					<!--Card Title-->
+					<h4 class="card-title">
+						<i class="fas fa-list-ol" aria-hidden="true"></i>
+						Instructions
+					</h4>
+					<!--Instruction Field-->
+					<div class="input-field instructions col s12">
+						<input id="instructions" name="instructions" type="text" placeholder="Instructions (one per line)" class="form-control validate" required>
+						<label for="instructions"></label>
+					</div>
+					<div class="col s12 add-remove-btns">
+						<!--Add Instruction Row Btn-->
+						<button type="button" class="waves-effect waves-light btn add-instruction small-btn" aria-label="Add new instruction row">
+                <i class="fas fa-plus material-icons" aria-hidden="true"></i>
+            </button>
+						<!--Remove Instruction Row Btn-->
+						<button type="button" class="waves-effect waves-light btn remove-instruction small-btn alt" aria-label="Remove last instruction row">
+                <i class="fas fa-minus material-icons" aria-hidden="true"></i>
+            </button>
+					</div>
+				</div>
+
+				<div class="form-group col-md-6">
+					<div class="btn small-btn col-sm-12">
+						<i class="far fa-image" aria-hidden="true"></i>
+						<input type="file" name="image">
+                                   </div>
+						<div class="file-path-wrapper">
+							<input class="file-path validate" name="filepath" placeholder="Add an image (optional)..." type="text">
+                                       </div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-12 text-center">
+								<button class="btn btn-primary" title="Submit">Add</button>
+								<button class="btn btn-warning" title="Cancel">Cancel</button>
+							</div>
+						</div>
+
+		</form>
+	</div>
+</div>
+
+{% endblock %}
