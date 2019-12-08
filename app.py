@@ -5,6 +5,7 @@ from bson.objectid import ObjectId
 from dotenv import load_dotenv
 load_dotenv()
 
+
 USERNAME = os.getenv('MONGODB_USERNAME')
 PASSWORD = os.getenv('MONGODB_PASSWORD')
 COLLECTION_NAME = os.getenv('MONGODB_COLLECTION_NAME')
@@ -21,6 +22,8 @@ print(COLLECTION_NAME)
 
 mongo = PyMongo(app)
 
+time_coll = mongo.db.time
+
 
 @app.route('/')
 @app.route('/all_recipes')
@@ -30,7 +33,17 @@ def get_recipes():
 
 @app.route('/add_recipe')
 def add_recipe():
-    return render_template("addrecipe.html", recipes=mongo.db.recipes.find())
+    return render_template("addrecipe.html", cooking_time=mongo.db.cooking_time.find())
+
+
+# def time_dropdown():
+#     '''
+#     Drop down menu for time values (prep time and cook time)
+#     Accesses time array within the time database
+#     '''
+#     return [
+#         t for time in time_coll.find()
+#         for t in time.get("time")]
 
 
 if __name__ == '__main__':

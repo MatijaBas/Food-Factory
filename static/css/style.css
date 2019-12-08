@@ -1,11 +1,55 @@
 html, body {
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
 }
 
 body {
     background-color: rgb(250, 250, 250);
 }
+
+article {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
+}
+
+footer {
+    padding-top: 2rem;
+    position: relative;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+}
+
+.fa-facebook-square:hover {
+    color: #3b5998;
+}
+
+.fa-pinterest:hover {
+    color: #c8232c;
+}
+
+.fa-instagram:hover {
+    color: #fbad50;
+}
+
+
+.fa-twitter:hover {
+    color: #38a1f3;
+}
+
 .btn-light {
     color: #212529;
     background-color: #f8f9fa;
