@@ -14,7 +14,7 @@
           background: #f5f5f5;
           padding: 50px;
           ">
-		<form method="POST" action="" enctype="multipart/form-data" style="margin: 18px;">
+		<form method="POST" action="{{url_for('insert_recipe')}}" enctype="multipart/form-data" style="margin: 18px;">
 
 			<div class="form-row">
 				<div class="form-group col-md-12">
@@ -29,12 +29,11 @@
 						<i class="fab fa-bandcamp"></i>
 						<label for="category">Category</label>
 
-						<select id="category" class="form-control">
-                            <option selected>Choose...</option>
-                            <option>Everyday</option>
-                            <option>Christmas</option>
-                            <option>Vegeterian</option>
-                            <option>Desserts</option>
+						<select id="category" name="category_name" class="form-control">
+                            <option disabled selected>Choose Category</option>
+                            {% for cat in categories %}
+                            <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                            {% endfor %}
                         </select>
 					</h4>
 				</div>
@@ -44,12 +43,7 @@
 					<h4 class="card-title">
 						<i class="fas fa-clock"></i>
 						<label>Cooking time</label>
-						<select id="cooking_time" name="time" class="form-control">
-                            <option value="" disabled selected>Minutes...</option>
-                            {% for t in cooking_time %}
-                               <option value="{{t.time}}">{{t.time}}</option>
-                            {% endfor %}
-                        </select>
+						<input type="number" class="form-control" id="cooking_time" placeholder="minutes">
 					</h4>
 				</div>
 				<div class="form-group col-md-12">
@@ -112,24 +106,26 @@
 					</div>
 				</div>
 				<!--Image File Input-->
-				<div class="form-group">
+				<!-- <div class="form-group">
 					<div class="custom-file">
 						<i class="fas fa-image"></i>
 						<input type="file" class="custom-file-input" id="customFile">
 						<label class="custom-file-label" for="customFile">Add Image</label>
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<!--Add and Cancel buttons-->
 			<div class="form-group">
 				<div class="col-sm-12 text-center">
-					<button class="btn btn-dark" title="Submit">Add</button>
-					<button class="btn btn-outline-dark" title="Cancel">Cancel</button>
+					<button class="btn btn-dark" title="Submit" type="submit" name="action">Add</button>
+					<button class="btn btn-outline-dark" type="submit" name="action">Cancel</button>
 				</div>
 			</div>
 
 		</form>
 	</div>
 </div>
+
+
 
 {% endblock %}
