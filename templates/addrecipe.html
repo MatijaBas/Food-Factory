@@ -1,18 +1,17 @@
 {% extends 'base.html'%} {% block content %}
 
-<h2 style="
-    margin-top: 120px;
+<h1 style="
+    margin-top: 40px;
     margin-left: 30px;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
     text-align: center;
     color: #1d2124;
-">Add Recipe</h2>
+">Add Recipe</h1>
 <div class="container">
 	<div class="row recipe-card card z-depth-1 center-align" style="
           width: 80%;
           margin: 0 auto;
           background: #f5f5f5;
-          padding: 50px;
           ">
 		<form method="POST" action="{{url_for('insert_recipe')}}" enctype="multipart/form-data" style="margin: 18px;">
 

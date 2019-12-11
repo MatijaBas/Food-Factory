@@ -1,12 +1,12 @@
 {% extends 'base.html'%} {% block content %}
 
-<h2 style="
-    margin-top: 120px;
+<h1 style="
+    margin-top: 40px;
     margin-left: 30px;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
     text-align: center;
     color: #1d2124;
-">Edit Recipe</h2>
+">Edit Recipe</h1>
 <div class="container">
 	<div class="row recipe-card card z-depth-1 center-align" style="
           width: 80%;
@@ -35,11 +35,11 @@
 						<select id="category" name="category" class="form-control">
                             <option disabled selected>Choose Category</option>
                             {% for cat in categories %}
-                                {% if cat.category.name == recipe.category.name%}
-                                <option value="{{cat.category_name}}" selected >{{cat.category_name}}</option>
+                                {% if cat.category_name == recipe.category%}
+                                <option value="{{cat.category_name}}">{{cat.category_name}}</option>
                                 {% else %}
                                 <option value="{{cat.category_name}}">{{cat.category_name}}</option>
-                              {% endif %}
+                                {% endif%}
                             {% endfor %}
                         </select>
 					</h4>

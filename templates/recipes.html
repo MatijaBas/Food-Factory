@@ -1,7 +1,14 @@
 {% extends 'base.html'%} {% block content %}
 <main role="main">
+	<h1 style="
+    margin-top: 40px;
+    margin-left: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #1d2124;
+">All Recipes</h1>
 	<div class="album py-5 bg-light">
-		<div class="container" style="padding-top:80px;">
+		<div class="container">
 
 			<div class="row">
 				{% for recipe in recipes %}
