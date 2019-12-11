@@ -6,7 +6,7 @@
     margin-bottom: 100px;
     text-align: center;
     color: #1d2124;
-">Add Recipe</h2>
+">Edit Recipe</h2>
 <div class="container">
 	<div class="row recipe-card card z-depth-1 center-align" style="
           width: 80%;
@@ -14,7 +14,8 @@
           background: #f5f5f5;
           padding: 50px;
           ">
-		<form method="POST" action="{{url_for('insert_recipe')}}" enctype="multipart/form-data" style="margin: 18px;">
+		<form method="POST" action="{{url_for('update_recipe', recipe_id=recipe._id)}}" enctype="multipart/form-data"
+			style="margin: 18px;">
 
 			<div class="form-row">
 				<!--Title Select-->
@@ -22,8 +23,8 @@
 					<h4 class="card-title">
 						<i class="fas fa-file-signature" aria-hidden="true"></i>
 						<label for="title">Title</label>
-						<input id="title" name="title" type="text" minlength="5" maxlength="50" class="form-control">
-                </h4>
+						<input id="title" name="title" type="text" minlength="5" maxlength="50" class="form-control" value="{{recipe.title}}">
+			</h4>
 				</div>
 				<!--Category Select-->
 				<div class="form-group col-md-12">
@@ -34,7 +35,11 @@
 						<select id="category" name="category" class="form-control">
                             <option disabled selected>Choose Category</option>
                             {% for cat in categories %}
-                            <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                                {% if cat.category.name == recipe.category.name%}
+                                <option value="{{cat.category_name}}" selected >{{cat.category_name}}</option>
+                                {% else %}
+                                <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                              {% endif %}
                             {% endfor %}
                         </select>
 					</h4>
@@ -46,7 +51,7 @@
 					<h4 class="card-title">
 						<i class="fas fa-clock"></i>
 						<label>Cooking time</label>
-						<input type="number" class="form-control" id="cooking_time" name="cooking_time" placeholder="minutes">
+						<input type="number" class="form-control" id="cooking_time" name="cooking_time" value="{{recipe.cooking_time}}" placeholder="minutes">
 					</h4>
 				</div>
 				<!--Serves Select-->
@@ -54,7 +59,7 @@
 					<h4 class="card-title">
 						<i class="fas fa-user-friends"></i>
 						<label for="serves">Serves</label>
-						<input type="text" class="form-control" id="serves" name="serves" placeholder="peoples">
+						<input type="text" class="form-control" id="serves" name="serves" value="{{recipe.serves}}" placeholder="peoples">
                         </h4>
 				</div>
 				<!--Author Field-->
@@ -62,8 +67,8 @@
 					<h4 class="card-title">
 						<i class="fas fa-user-edit"></i>
 						<label for="author">Author</label>
-						<input type="text" class="form-control" id="author">
-								</h4>
+						<input type="text" class="form-control" id="author" value="{{recipe.author}}">
+					</h4>
 				</div>
 			</div>
 			<div class="form-group col-md-12">
@@ -74,7 +79,7 @@
 						Ingredients
 					</h4>
 					<div class="ingredients input-field col-md-12" style="padding: 0;">
-						<input id="ingredients" name="ingredients" type="text" placeholder="Ingredient (one per line)" class="form-control validate" required>
+						<input id="ingredients" name="ingredients" type="text" value="{{recipe.ingredients}}" placeholder="Ingredient (one per line)" class="form-control validate" required>
 						<label for="ingredients"></label>
 					</div>
 					<div class="col-md-12 add-remove-btns">
@@ -96,7 +101,7 @@
 						Instructions
 					</h4>
 					<div class="input-field instructions col-md-12" style="padding: 0;">
-						<input id="instructions" name="instructions" type="text" placeholder="Instructions (one per line)" class="form-control validate" required>
+						<input id="instructions" name="instructions" type="text" value="{{recipe.instructions}}" placeholder="Instructions (one per line)" class="form-control validate" required>
 						<label for="instructions"></label>
 					</div>
 					<div class="col-md-12 add-remove-btns">
