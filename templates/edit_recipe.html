@@ -32,14 +32,14 @@
 						<i class="fab fa-bandcamp"></i>
 						<label for="category">Category</label>
 
-						<select id="category" name="category" class="form-control">
+						<select id="category" name="category_name" class="form-control">
                             <option disabled selected>Choose Category</option>
                             {% for cat in categories %}
-                                {% if cat.category_name == recipe.category%}
-                                <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                                {% if cat.category_name == recipes.category_name %}
+                                <option value="{{cat.category_name}}" selected >{{cat.category_name}}</option>
                                 {% else %}
                                 <option value="{{cat.category_name}}">{{cat.category_name}}</option>
-                                {% endif%}
+                                {% endif %}
                             {% endfor %}
                         </select>
 					</h4>
@@ -67,7 +67,7 @@
 					<h4 class="card-title">
 						<i class="fas fa-user-edit"></i>
 						<label for="author">Author</label>
-						<input type="text" class="form-control" id="author" value="{{recipe.author}}">
+						<input type="text" class="form-control" id="author" name="author" value="{{recipe.author}}">
 					</h4>
 				</div>
 			</div>

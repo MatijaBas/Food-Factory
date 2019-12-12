@@ -56,7 +56,7 @@ def insert_recipe():
     (request.form.to_dict())
     recipes.insert_one({
         "title": request.form['title'],
-        "category": request.form.get('category'),
+        "category_name": request.form.get('category_name'),
         "cooking_time": request.form.get('cooking_time'),
         "serves": request.form.get('serves'),
         "author": request.form.get('author'),
@@ -100,7 +100,7 @@ def update_recipe(recipe_id):
             {
                 "$set": {
                     "title": request.form['title'],
-                    "category": request.form.get('category'),
+                    "category_name": request.form.get('category_name'),
                     "cooking_time": request.form.get('cooking_time'),
                     "serves": request.form.get('serves'),
                     "author": request.form.get('author'),

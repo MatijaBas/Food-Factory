@@ -30,7 +30,7 @@
 						<i class="fab fa-bandcamp"></i>
 						<label for="category">Category</label>
 
-						<select id="category" name="category" class="form-control">
+						<select id="category" name="category_name" class="form-control">
                             <option disabled selected>Choose Category</option>
                             {% for cat in categories %}
                             <option value="{{cat.category_name}}">{{cat.category_name}}</option>
