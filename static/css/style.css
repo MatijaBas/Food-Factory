@@ -21,6 +21,60 @@ article {
     margin-top: 16px;
 }
 
+.header {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTdzxL0fBlrR4FCT2EriVqNnLKp41MS2X0u8VroBBmsHnV2FJb&s);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif; 
+}
+
+.find-recipe {
+    color: #fff;
+    margin-bottom: 70px;
+    font-size: 45px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.search-field {
+    height: 50px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+}
+
+.cusines {
+    width: 400px;
+}
+
+.ingredient {
+    width: 200px;
+}
+
+.search-btn {
+    height: 50px;
+    width: 150px;
+    background: #ffeb3b;
+    border: none;
+    color: #000;
+    border-radius: 25px;
+}
+
+.search-btn:hover {
+    background: #ffc107;
+    cursor: pointer;
+}
+
+.form-box {
+    background: rgba(0,0,0,0.5);
+    padding: 30px;
+}
+
 /* --------------------Footer------------------------- */
 footer {
     padding-top: 2rem;

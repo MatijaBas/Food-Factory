@@ -3,7 +3,9 @@ from flask import Flask, render_template, redirect, request, url_for, flash, ses
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from dotenv import load_dotenv
+from bson import json_util
 from forms import RegistrationForm, LoginForm
+import json
 load_dotenv()
 
 
@@ -28,6 +30,18 @@ mongo = PyMongo(app)
 @app.route('/')
 def index():
     return render_template("index.html")
+
+
+# @app.route('/recipes')
+# def recipes():
+#     meal = request.args.get("meal")
+#     query = {}
+#     if meal:
+#         query['food'] = meal
+#     recipes = mongo.db.recipes.find(query)
+
+#     meal_json = json.loads(open('data/meal.json').read())
+#     return render_template("recipes.html", recipes=recipes, meal_json=meal_json)
 
 
 @app.route('/all_recipes')
