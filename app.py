@@ -1,11 +1,9 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, flash
+from flask import Flask, render_template, redirect, request, url_for, flash, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from dotenv import load_dotenv
 from forms import RegistrationForm, LoginForm
-import json
-import datetime
 load_dotenv()
 
 
@@ -128,13 +126,12 @@ def register():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        if form.email.data == 'admin@blog.com' and form.password.data == 'password':
+        if form.email.data == 'admin@gmail.com' and form.password.data == 'password':
             flash('You have been logged in!', 'success')
             return redirect(url_for('index'))
         else:
             flash('Login Unsuccessful. Please check username and password', 'danger')
     return render_template('login.html', title='Login', form=form)
-
 
 
 if __name__ == '__main__':
