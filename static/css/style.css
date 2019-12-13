@@ -15,6 +15,12 @@ article {
     grid-template-rows: auto 1fr auto;
     grid-template-columns: 100%;
 }
+
+.index-img {
+    border-radius: 2rem;
+    margin-top: 16px;
+}
+
 /* --------------------Footer------------------------- */
 footer {
     padding-top: 2rem;

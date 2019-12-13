@@ -113,6 +113,11 @@ def update_recipe(recipe_id):
         return render_template("detail.html", recipe=the_recipe)
 
 
+@app.route('/search')
+def search():
+    return render_template("search.html", recipes=mongo.db.recipes.find())
+
+
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()

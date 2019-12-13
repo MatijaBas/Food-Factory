@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+	<div class="col-xs-12 inline">
+		<div class="search">
+			<p class="hidden-xs"><b>Search by:</b></p>
+			<div class="search-selectors">
+				<form action="/recipes">
+					<div width="100%">
+						<div width="100%" style="display:inline-block">
+							<select class="js-search-filter-selector" data-filter="cuisine" name='cuisine' id='cuisine'>
+                                {% for cat in categories  %}
+                                    <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                                 {% endfor %}
+                            </select>
+						</div>
+
+						<button class="btn waves-effect waves-light" style="background:pink" type="submit" value="Search">SEARCH
+                  </button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

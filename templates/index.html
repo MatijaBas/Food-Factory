@@ -1,4 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="container">
+	<div class="row center-align">
+		<!--WELCOME MESSAGE-->
+		<div class="col-md-12 text-center">
+			<h1 class="page-title">Welcome{% if session.user %}, {{ session['user']|capitalize }}{% endif %}!</h1>
+		</div>
+		<!--HOME PAGE IMAGE-->
+		<div class="col-md-12 text-center">
+			<img src="{{ url_for('static', filename='img/home-img.jpg') }}" class="img-fluid index-img" alt="Home Page image">
+        </div>
+		</div>
+	</div>
 
-{% endblock %}
+	{% endblock %}
