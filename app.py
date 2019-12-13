@@ -1,8 +1,9 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from dotenv import load_dotenv
+from forms import RegistrationForm, LoginForm
 import json
 import datetime
 load_dotenv()
@@ -14,6 +15,7 @@ COLLECTION_NAME = os.getenv('MONGODB_COLLECTION_NAME')
 
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
 
 app.config["MONGO_DBNAME"] = 'food_factory'
 app.config["MONGO_URI"] = 'mongodb+srv://' + USERNAME + ':' + PASSWORD + \
@@ -111,6 +113,28 @@ def update_recipe(recipe_id):
 
         the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
         return render_template("detail.html", recipe=the_recipe)
+
+
+@app.route("/register", methods=['GET', 'POST'])
+def register():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        flash(f'Account created for {form.username.data}!', 'success')
+        return redirect(url_for('index'))
+    return render_template('register.html', title='Register', form=form)
+
+
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        if form.email.data == 'admin@blog.com' and form.password.data == 'password':
+            flash('You have been logged in!', 'success')
+            return redirect(url_for('index'))
+        else:
+            flash('Login Unsuccessful. Please check username and password', 'danger')
+    return render_template('login.html', title='Login', form=form)
+
 
 
 if __name__ == '__main__':
