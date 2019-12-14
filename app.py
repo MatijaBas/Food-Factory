@@ -1,28 +1,21 @@
 import os
+import json
 from flask import Flask, render_template, redirect, request, url_for, flash, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from dotenv import load_dotenv
 from bson import json_util
+from dotenv import load_dotenv
 from forms import RegistrationForm, LoginForm
-import json
+
+
 load_dotenv()
 
-
-USERNAME = os.getenv('MONGODB_USERNAME')
-PASSWORD = os.getenv('MONGODB_PASSWORD')
-COLLECTION_NAME = os.getenv('MONGODB_COLLECTION_NAME')
-
-
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
 
+
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 app.config["MONGO_DBNAME"] = 'food_factory'
-app.config["MONGO_URI"] = 'mongodb+srv://' + USERNAME + ':' + PASSWORD + \
-    '@myfirstcluster-y6kfn.mongodb.net/' + \
-    COLLECTION_NAME + '?retryWrites=true&w=majority'
-
-# print(COLLECTION_NAME)
+app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 
 mongo = PyMongo(app)
 
@@ -153,7 +146,10 @@ def login():
     return render_template('login.html', title='Login', form=form)
 
 
+port = int(os.environ.get('PORT', 5000))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
-            port=int(os.environ.get('PORT')),
+            port=port,
             debug=True)
