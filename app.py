@@ -146,10 +146,7 @@ def login():
     return render_template('login.html', title='Login', form=form)
 
 
-port = int(os.environ.get('PORT', 5000))
-
-
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
-            port=port,
+            port=int(os.environ.get('PORT', 5000),
             debug=True)
