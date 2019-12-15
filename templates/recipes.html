@@ -13,25 +13,29 @@
 			<div class="row">
 				{% for recipe in recipes %}
 				<div class="col-md-4">
-					<div class="card mb-4 shadow-sm"
-						onclick="window.location.href='{{ url_for( 'detail' , recipe=recipe._id,action='detail' ) }}';">
+					<div class="card mb-4 shadow-sm">
 						<p class=" bd-placeholder-img card-img-top" width="100%" height="225" alt="{{ recipe.title }}">
 						</p>
 						{% if recipe.image %}
-						<img src="/static/img/{{recipe.image}}" />
+						<img src="/static/img/{{recipe.image}}" class="img-fluid img-thumbnail"/>
                          {% endif %}
 						<div class="card-body">
-							<h4 class="card-text">{{recipe.title}}</h4>
+							<h4 class="card-text d-flex justify-content-center">{{recipe.title}}</h4>
 							<div class="d-flex justify-content-between align-items-center">
 								<div class="card-body">
 									<!-- <p class="card-text">{{recipe.ingredients}}</p>
 									<p class="card-text">{{recipe.instructions}}</p> -->
-									<p class="card-text">{{recipe.category_name}}</p>
-									<p class="card-text">{{recipe.cooking_time}}</p>
-									<p class="card-text">{{recipe.serves}}</p>
-									<small class="text-muted">{{recipe.author}}</small>
+									<p class="card-text"><i class="fab fa-bandcamp"></i> {{recipe.category_name}}</p>
+									<p class="card-text"><i class="fas fa-clock"></i> {{recipe.cooking_time}} min</p>
+									<p class="card-text"><i class="fas fa-user-friends"></i> {{recipe.serves}}</p>
+									<small class="text-muted"><i class="fas fa-user-edit"></i> {{recipe.author}}</small>
 								</div>
 							</div>
+						</div>
+						<div class="card-footer d-flex justify-content-center">
+							<button type="button" class="btn btn-outline-dark"
+								onclick="window.location.href='{{ url_for( 'detail' , recipe=recipe._id,action='detail' ) }}';">View
+								Recipe</button>
 						</div>
 					</div>
 				</div>

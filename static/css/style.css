@@ -115,3 +115,8 @@ footer a:hover {
     background-color: #f8f9fa;
     border-color: #212529;
 }
+
+/* --------------------All Recipes------------------------- */
+.img-thumbnail {
+    border: none;
+}
