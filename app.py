@@ -25,18 +25,6 @@ def index():
     return render_template("index.html")
 
 
-# @app.route('/recipes')
-# def recipes():
-#     meal = request.args.get("meal")
-#     query = {}
-#     if meal:
-#         query['food'] = meal
-#     recipes = mongo.db.recipes.find(query)
-
-#     meal_json = json.loads(open('data/meal.json').read())
-#     return render_template("recipes.html", recipes=recipes, meal_json=meal_json)
-
-
 @app.route('/all_recipes')
 def all_recipes():
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
@@ -94,8 +82,9 @@ def detail():
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     all_my_recipes = mongo.db.recipes.find({"username": session['username']})
+    category_name = mongo.db.categories.find()
     return render_template('edit_recipe.html', recipe=the_recipe,
-                           my_recipes=all_my_recipes)
+                           my_recipes=all_my_recipes, categories=category_name)
 
 
 @app.route('/update_recipe/<recipe_id>', methods=['GET', 'POST'])
