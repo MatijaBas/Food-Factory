@@ -14,11 +14,16 @@ article {
     display: grid;
     grid-template-rows: auto 1fr auto;
     grid-template-columns: 100%;
+    background: #dbe0e5;
 }
 
 .index-img {
     border-radius: 2rem;
     margin-top: 16px;
+}
+
+.recipe-img {
+    margin-top: 25px;
 }
 
 .header {
