@@ -18,6 +18,8 @@
 						</p>
 						{% if recipe.image %}
 						<img src="/static/img/{{recipe.image}}" class="img-fluid img-thumbnail"/>
+                        {% else %}
+						<img src="/static/img/def-image.jpg" class="img-fluid img-thumbnail"/>
                          {% endif %}
 						<div class="card-body">
 							<h4 class="card-text d-flex justify-content-center">{{recipe.title}}</h4>

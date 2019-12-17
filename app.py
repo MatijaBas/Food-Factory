@@ -78,7 +78,7 @@ def detail():
         return render_template("recipes.html", recipes=mongo.db.recipes.find())
 
 
-@app.route('/edit_recipe/<recipe_id>')
+@app.route('/edit_recipe/<recipe_id>', methods=['POST'])
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     all_my_recipes = mongo.db.recipes.find({"username": session['username']})

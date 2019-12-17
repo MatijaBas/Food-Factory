@@ -4,9 +4,11 @@
 	<div class="row col-md-12 mb-5">
 		<div class="card recipe-card">
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-6 bg-img">
 					{% if recipe.image %}
 					<img src="/static/img/{{recipe.image}}" class="col-sm-4 col-md-8 recipe-img" />
+                    {% else %}
+					<img src="/static/img/def-image.jpg" class="col-sm-4 col-md-8 recipe-img"/>
                     {% endif %}
                  </div>
 					<div class="col-md-6 text-center" style="margin-top: 100px;">
@@ -24,10 +26,12 @@
 					<p class="card-text"><strong>Instructions:</strong> {{recipe.instructions}}</p>
 				</div>
 				<div class="card-footer">
-					<a style="cursor:pointer; float: left;padding: 5px;" class="btn btn-success"
+					<a style="cursor:pointer; float: left;padding: 5px; width: 110px; height: 36px"
+						class="btn btn-success"
 						onclick="window.location.href='{{ url_for( 'detail' , recipe=recipe._id,action='edit'  ) }}';">Edit</a>
-					<a style="cursor:pointer; float: right;padding: 5px;" class="btn btn-warning"
-						onclick="window.location.href='{{ url_for( 'detail' , recipe=recipe._id,action='delete' ) }}';">Delete</a>
+					<a style="cursor:pointer; float: right;padding: 5px;  width: 110px; height: 36px"
+						class="btn btn-danger delete" title="delete"
+						onclick="return confirm('Are you sure you want to delete this item'), window.location.href='{{ url_for( 'detail' , recipe=recipe._id,action='delete'  ) }}';">Delete</a>
 				</div>
 			</div>
 		</div>
