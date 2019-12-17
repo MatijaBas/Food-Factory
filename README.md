@@ -32,3 +32,59 @@
   - [Content](#Content)
   - [Acknowledgements](#Acknowledgements)
   - [Disclaimer](#Disclaimer)
+
+## About
+
+### Why This Project?
+
+## UX
+
+### User Stories
+
+### Style Rationale
+
+### Mockups
+
+### Database Schema
+
+## Features
+
+### Functionality
+
+### Features Left to Implement
+
+## Technologies Used
+
+### Version Control
+
+### Hosting
+
+## Testing
+
+### Responsive and Functional Testing
+
+### Additional Testing
+
+### Code Validation
+
+### Interesting Bugs Or Problems
+
+## Deployment
+
+### Live App Link
+
+### Repository Link
+
+### Running Code Locally
+
+## Credits
+
+### Content
+
+### Media
+
+### Acknowledgements
+
+### Disclaimer
+
+This project is for educational purposes only.
