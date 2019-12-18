@@ -7,7 +7,7 @@
 - [**UX**](#UX)
   - [User Stories](#User-Stories)
   - [Style Rationale](#Style-Rationale)
-  - [Wireframes](#Wireframes)
+  - [Mockups](#Mockups)
   - [Database Schema](#Database-Schema)
 - [**Features**](#Features)
   - [Functionality](#Functionality)
@@ -66,6 +66,11 @@ When doing research for this project, I was browsing through google.com for diff
 I drew my Mockups using paper and pen, there is few of them such as the home page, recipe page, add recipe page, login and register.
 
 - [Homepage](https://github.com/MatijaBas/Food-Factory/blob/master/Mockups/Homepage.pdf)
+- [Search](https://github.com/MatijaBas/Food-Factory/blob/master/Mockups/Search.pdf)
+- [All Recipes](https://github.com/MatijaBas/Food-Factory/blob/master/Mockups/All_recipes.pdf)
+- [Add recipe](https://github.com/MatijaBas/Food-Factory/blob/master/Mockups/Add_recipe.pdf)
+- [Login]https://github.com/MatijaBas/Food-Factory/blob/master/Mockups/Login.pdf)
+- [Register]https://github.com/MatijaBas/Food-Factory/blob/master/Mockups/Register.pdf)
 
 ### Database Schema
 
