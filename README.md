@@ -21,9 +21,7 @@
   - [Responsive and Functional Testing](#Responsive-and-Functional-Testing)
   - [Additional Testing](#Additional-Testing)
   - [Code Validation](#Code-Validation)
-  - [Interesting Bugs Or Problems](#Interesting-Bugs-Or-Problems)
-    - [Resolved Bugs](#Resolved-Bugs)
-    - [Partially Resolved or Unresolved Bugs](#Partially-Resolved-or-Unresolved-Bugs)
+  - [Bugs Or Problems](#Bugs-Or-Problems)
 - [**Deployment**](#Deployment)
   - [Live App Link](#Live-App-Link)
   - [Repository Link](#Repository-Link)
@@ -69,8 +67,8 @@ I drew my Mockups using paper and pen, there is few of them such as the home pag
 - [Search](https://github.com/MatijaBas/Food-Factory/blob/master/Mockups/Search.pdf)
 - [All Recipes](https://github.com/MatijaBas/Food-Factory/blob/master/Mockups/All_recipes.pdf)
 - [Add recipe](https://github.com/MatijaBas/Food-Factory/blob/master/Mockups/Add_recipe.pdf)
-- [Login]https://github.com/MatijaBas/Food-Factory/blob/master/Mockups/Login.pdf)
-- [Register]https://github.com/MatijaBas/Food-Factory/blob/master/Mockups/Register.pdf)
+- [Login](https://github.com/MatijaBas/Food-Factory/blob/master/Mockups/Login.pdf)
+- [Register](https://github.com/MatijaBas/Food-Factory/blob/master/Mockups/Register.pdf)
 
 ### Database Schema
 
@@ -314,7 +312,12 @@ To run my code locally, users can download a local copy of my code to their desk
 ### Content
 
 -Every single line of the code in my project was written by myself.
-
+- I researched how to upload images to my local directory by reading this [Flask-Uploads](https://pythonhosted.org/Flask-Uploads/) article.
+- I got a general idea of how to create a register and login system by watching this [Login Video](https://www.youtube.com/watch?v=UIJKdCIEXUQ&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH&index=3)
+- I read this [Error Handlers Article](https://flask.palletsprojects.com/en/1.0.x/errorhandling/) to learn how to implement error handlers in my Python code.
+- I read this [Jinja Template Inheritance Article](https://jinja.palletsprojects.com/en/2.10.x/templates/) to learn how to import my partials HTML files to the main HTML files using Jinja Templating.
+- I read this [SASS Output Styles Article](https://web-design-weekly.com/2014/06/15/different-sass-output-styles/) to learn how to create different styles of CSS files using SCSS.
+-And many other video and tutorials that I get from my menthor.
 
 ### Media
 
@@ -324,6 +327,11 @@ To run my code locally, users can download a local copy of my code to their desk
 - I found all the recipe pictures used in my site on [Coolinarika](https://www.coolinarika.com/)
 
 ### Acknowledgements
+
+- I received inspiration for the style of my project from [Coolinarka](https://www.coolinarika.com/)
+- Thanks to everybody on SLACK that help me when I was stuck and needed assistance. Thanks Tutors aswell. They help me to debug my Python code.
+- Big thanks to my mentor Antonija Simic, for her feedback on my project's scope, design and so many useful information shared. It's so inspiring to work with her and everything looks so easy.
+- And at the end thanks to my wife and my Family,to gave me precious time so I can work on my project, they are biges support I can imagine.
 
 ### Disclaimer
 
