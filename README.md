@@ -35,15 +35,37 @@
 
 ## About
 
+I have created online cookbook containing recipes in different categories. My intention was to create a place where user can find an inspiration to create their everyday but also recipes for special occasions. In addition, user can register and login to be able to add, edit and delete their own recipes. For easier and quicker experience, user can browse recipes, searching by category or cooking time. 
+
 ### Why This Project?
+
+This project was created for the Data Centric Development  project of [**_Code Institute's_**](https://codeinstitute.net/) Full Stack Software Development course. The project scope was to create a web app using Python and a no-SQL database (MongoDB), which uses CRUD operations to allow users to easily create, read, update and delete food recipes.
+The front-end display and functionality uses HTML, CSS and JavaScript. The back-end functionality uses Python, Flask and MongoDB.
+
 
 ## UX
 
 ### User Stories
 
+-	As user, I would like to check out different recipes
+-	As user, I would like to browse recipes by different categories
+-	As user, I would like to add my recipes
+-	As user, I would like to edit existing recipes on webpage
+-	As user, I would like to delete existing receipt on webpage
+-	As user, I would like to register on the webpage
+-	As user, I would like to login to the webpage
+-	My goal was to create user friendly , easily accessible, data driven web application
+
+
 ### Style Rationale
 
+When doing research for this project, I was browsing through google.com for different webpages with similar theme.  I drew the layout for this webpage using pen and paper. Then tried on different colours and background images I found on google.com to find a best match to the idea I had in my head.
+
 ### Mockups
+
+I drew my Mockups using paper and pen, there is few of them such as the home page, recipe page, add recipe page, login and register.
+
+- [Homepage](https://github.com/MatijaBas/Food-Factory/blob/master/Mockups/Homepage.pdf)
 
 ### Database Schema
 
