@@ -4,7 +4,7 @@
 	<div class="row center-align">
 		<!--WELCOME MESSAGE-->
 		<div class="col-md-12 text-center">
-			<h1 class="page-title">Welcome{% if session.user %}, {{ session['user']|capitalize }}{% endif %}!</h1>
+			<h1 class="page-title">{% if session.user %}, {{ session['user']|capitalize }}{% endif %}</h1>
 		</div>
 		<!--HOME PAGE IMAGE-->
 		<div class="col-md-12 text-center">

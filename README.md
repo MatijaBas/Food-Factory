@@ -74,8 +74,8 @@ I drew my Mockups using paper and pen, there is few of them such as the home pag
 
 To help me build my project I have created different databases for the collections I would use;
 -	[Recipe Schema](https://github.com/MatijaBas/Food-Factory/blob/master/database_schema/dataschema.pdf)
--	[Category Schema]
--	[UserLogin Schema]
+-	Category Schema
+-	UserLogin Schema
 
 
 ## Features

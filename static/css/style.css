@@ -80,6 +80,10 @@ article {
     padding: 30px;
 }
 
+.add-recipe {
+    
+}
+
 /* --------------------Footer------------------------- */
 footer {
     padding-top: 2rem;
@@ -98,22 +102,18 @@ footer a:hover {
     background-color: transparent;
 }
 
-.fa-facebook-square:hover {
-    color: #3b5998;
+.fa-github-square:hover {
+    color: 	#000000;
 }
 
-.fa-pinterest:hover {
-    color: #c8232c;
+.fa-linkedin:hover {
+    color: #1815b9;
 }
 
-.fa-instagram:hover {
-    color: #fbad50;
+.fa-laptop-code:hover {
+    color: #e54725;
 }
 
-
-.fa-twitter:hover {
-    color: #38a1f3;
-}
 
 .btn-light {
     color: #212529;
